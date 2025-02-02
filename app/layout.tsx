@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import { Spotlight } from "@/components/ui/Spotlight";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -26,10 +25,6 @@ export default function RootLayout({
       <body
         className={`${poppins.className} relative w-full overflow-x-hidden`}
       >
-        {/*<div className="">*/}
-        {/*  <Spotlight />*/}
-        {/*</div>*/}
-
         <Nav />
         {children}
       </body>
