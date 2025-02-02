@@ -9,9 +9,10 @@ export default function Home() {
         <div className="z-10 w-3/4">
           <p>Libère-toi du stress en seulement 30 jours.</p>
           <h1 className="text-[75px] mt-[18px] leading-none">
-            Apprends à maîtriser ton stress pour reprendre le contrôle.
+            Apprends à maîtriser <br /> ton stress pour reprendre <br /> le
+            contrôle.
           </h1>
-          <p className="text-2xl text-[#A9A9A9] mt-[16px]">
+          <p className="text-2xl text-[#A9A9A9] mt-[16px] w-[850px]">
             Une approche humaine, personnalisée, et validée par des résultats
             concrets: rejoins-nous et découvre comment il est possible de
             transformer ton stress en sérénité.
