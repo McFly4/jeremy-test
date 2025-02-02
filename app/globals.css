@@ -44,8 +44,10 @@ body {
 }
 
 nav{
-  margin: 30px 40px;
-
+  width: 90%;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .home1{

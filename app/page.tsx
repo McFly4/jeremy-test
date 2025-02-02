@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Grid from "@/components/Grid";
+import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
-    <>
-      <div className=" home1 relative flex items-center justify-center gap-[60px] mt-[90px]">
-        <Grid />
+    <div className="relative">
+      <Grid />
+      <Nav />
+      <div className="home1 flex items-center justify-center gap-[60px] mt-[90px]">
         <div className="z-10 w-3/4">
           <p>Libère-toi du stress en seulement 30 jours.</p>
           <h1 className="text-[75px] mt-[18px] leading-none">
@@ -33,7 +35,7 @@ export default function Home() {
           ></video>
         </div>
       </div>
-      <div className="bg-white w-full mt-20 h-[90px] flex items-center justify-center gap-[50px]">
+      <div className="relative z-10 bg-white w-full mt-20 h-[90px] flex items-center justify-center gap-[50px]">
         <Image src="/leMonde.png" height={34} width={150} alt={"le monde"} />
         <Image src="/femme.png" height={34} width={150} alt={"le monde"} />
         <Image src="/lePoint.png" height={34} width={150} alt={"le monde"} />
@@ -41,6 +43,6 @@ export default function Home() {
         <Image src="/myRh.png" height={34} width={150} alt={"le monde"} />
         <Image src="/sqool.png" height={34} width={150} alt={"le monde"} />
       </div>
-    </>
+    </div>
   );
 }
