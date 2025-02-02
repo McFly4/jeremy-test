@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Grid from "@/components/Grid";
-import { Spotlight } from "@/components/ui/Spotlight";
 
 export default function Home() {
   return (
