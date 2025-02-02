@@ -26,9 +26,9 @@ export default function RootLayout({
       <body
         className={`${poppins.className} relative w-full overflow-x-hidden`}
       >
-        <div className="">
-          <Spotlight />
-        </div>
+        {/*<div className="">*/}
+        {/*  <Spotlight />*/}
+        {/*</div>*/}
 
         <Nav />
         {children}

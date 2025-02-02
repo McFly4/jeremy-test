@@ -32,7 +32,7 @@ export default function Home() {
           ></video>
         </div>
       </div>
-      <div className="bg-white w-full mt-60 h-[90px] flex items-center justify-center gap-[50px]">
+      <div className="bg-white w-full mt-20 h-[90px] flex items-center justify-center gap-[50px]">
         <Image src="/leMonde.png" height={34} width={150} alt={"le monde"} />
         <Image src="/femme.png" height={34} width={150} alt={"le monde"} />
         <Image src="/lePoint.png" height={34} width={150} alt={"le monde"} />
