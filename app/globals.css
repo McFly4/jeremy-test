@@ -53,3 +53,45 @@ nav{
 .home1{
   padding: 30px 40px;
 }
+
+.grayButton{
+  border: 2px solid #3f4041 ;
+  outline: 2px solid #5a5a5b;
+}
+
+.whiteBtn{
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  color: #000;
+  font-size: 16px;
+}
+
+.rounded-lg{
+  border-radius: 8px;
+}
+
+.magicCard{
+  box-shadow: #ffffff50 0px 0px 10px 0px;
+}
+
+.brain{
+  background-image: url("../public/brainBg.svg");
+  object-fit: cover;
+}
+
+.swiper-stories{
+  padding: 20px 0 !important;
+}
+
+.swiper-stories div{
+  width: 300px;
+}
+
+
+.swiper-stories div video{
+  border-radius: 15px;
+  object-fit: cover;
+  height: 450px;
+  box-shadow: #5a5a5b 0px 0px 10px 0px;
+}
