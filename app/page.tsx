@@ -7,6 +7,8 @@ import { MagicCard } from "@/components/ui/magic-card";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import VideoCarousel from "@/components/VideoCarousel";
 import { Faq } from "@/components/Faq";
+import { Meteors } from "@/components/ui/meteors";
+import { CircleCheck } from "lucide-react";
 
 export default function Home() {
   return (
@@ -209,52 +211,54 @@ export default function Home() {
         </button>
       </div>
       <div className="z-10 mt-[200px] flex flex-col justify-center items-center">
-        <GrayButton>Pour qui est ce programme</GrayButton>
+        <GrayButton>jai ce quil te faut</GrayButton>
         <h2 className="mt-[24px] text-5xl text-center font-semibold">
-          <span className="text-[#747474] ">Tu es toujours</span> sous pression
-          ?
+          <span className="text-[#747474] ">Decouvez</span> votre plan daction
         </h2>
         <p className="mt-[20px] text-[#c5c5c5] text-2xl text-center w-[80%] m-auto">
-          Ce programme est conçu pour les personnes qui saturent de toujours
-          être sous pression, de ne jamais réussir à calmer leur cerveau.
+          Dominez le Stress est un programme qui vous guidera étape par étape
+          pour transformer le stress en une force positive, éliminer la
+          surcharge mentale et retrouver un équilibre qui soutient votre
+          productivité et votre bien-être.
         </p>
-        <div className=" flex justify-center items-center gap-[100px] mt-[80px]">
-          <div>
-            <Image className="!static" src="/brain.png" fill alt="stress" />
+        <div className="flex flex-col justify-center items-center gap-[100px] mt-[80px]">
+          <div className="flex justify-center items-center h-full">
+            <Image
+              className="object-cover"
+              src="/stress.png"
+              width={430}
+              alt="stress"
+              height={270}
+            />
+            <div className="mx-[80px] div-dashed h-full">
+              <div className="div-dashed-number">1</div>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-2xl mb-4">Calmez le stress rapidement</p>
+              <p className="text-[#ffffffcc]">
+                - Lorem ipsum dolor it set amet consetcit ut ad.
+              </p>
+            </div>
           </div>
-          <div className="max-w-[500px] flex flex-col gap-[32px]">
-            <MagicCard
-              className="border border-[#676767] magicCard p-[24px] cursor-pointer bg-[#1e2020]"
-              gradientColor={"#323334"}
-            >
-              <img src="/icons/zap.svg" alt="zap" />
-              <p className=" mt-4 text-xl">
-                Epuisés par votre charge de travail
+          <div className="flex justify-center items-center h-full">
+            <Image
+              className="object-cover"
+              src="/stress.png"
+              width={430}
+              alt="stress"
+              height={270}
+            />
+            <div className="mx-[80px] div-dashed h-full">
+              <div className="div-dashed-number">2</div>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-2xl mb-4">Calmez le stress rapidement</p>
+              <p className="text-[#ffffffcc]">
+                - Lorem ipsum dolor it set amet consetcit ut ad.
               </p>
-              <p className="mt-6 text-[#787878]">
-                Vous êtes constamment sous pression pour atteindre vos
-                objectifs. Cette surcharge de travail vous épuise, impacte vos
-                relations personnelles et ruine votre productivité.
-              </p>
-            </MagicCard>
-            <MagicCard
-              className="magicCard border border-[#676767] shadow-[#3e3f40] shadow p-[24px] cursor-pointer bg-[#1e2020]"
-              gradientColor={"#323334"}
-            >
-              <img src="/icons/zap.svg" alt="zap" />
-              <p className=" mt-4 text-xl">
-                Pensez H24 à votre travail sans déconnecter{" "}
-              </p>
-              <p className="mt-6 text-[#787878]">
-                Vous travaillez non stop pour développer votre entreprise. Vous
-                narrivez pas à déconnecter de votre travail. Ce stress vous
-                epuise et vous savez que vous finirez par craquer.
-              </p>
-            </MagicCard>
-            <button className="whiteBtn w-full mt-[30px]">
-              Maîtrise ton stress dès maintenant
-            </button>
+            </div>
           </div>
+          <button className="whiteBtn w-1/2">Debloque ton potenteil</button>
         </div>
       </div>
       <div className="bg-white text-[#020518] mt-[70px] flex flex-col items-center justify-center">
@@ -325,7 +329,7 @@ export default function Home() {
         <VideoCarousel />
         <button className="whiteBtn mt-10">Rejoins les dès maintenant !</button>
       </div>
-      <div className="flex flex-col justify-center items-center mt-24 xl:mt-44">
+      <div className="relative flex flex-col justify-center items-center mt-24 xl:mt-44">
         <GrayButton>Apprends a dominuer le stress</GrayButton>
         <h2 className="leading-normal w-[650px] mt-[24px] text-5xl text-center font-semibold">
           <span className="text-[#747474] ">decouvrez le </span> programme au
@@ -334,12 +338,111 @@ export default function Home() {
         <p className="mt-4 text-xl text-[#FFFFFFE0]">
           ⮕ Possibilité de paiement en 3x sans frais
         </p>
+        <div className=" mt-[50px] flex justify-center gap-20">
+          <div></div>
+          <MagicCard className="relative max-w-[400px] flex flex-col rounded-2xl border border-[#717171] p-[30px]">
+            <img
+              src="/blur/blurPrice.svg"
+              className=" absolute -top-1/2 -left-1/2"
+              alt=""
+            />
+            <img
+              src="/blur/blurPrice.svg"
+              className=" absolute -bottom-1/2 -right-1/2"
+              alt=""
+            />
+            <Image
+              src={"/formation.png"}
+              width={330}
+              height={220}
+              className="object-cover"
+              alt={"formation price"}
+            />
+            <p className="text-xl">
+              Programme daccompagnement pour dominer le Stress
+            </p>
+            <p className="text-5xl mt-4">450€</p>
+            <div className="h-[1px] w-1/2 bg-[#ffffff29] my-4"></div>
+            <p className="mb-2">Tes avantages :</p>
+            <ul>
+              <li className=" text-[14px] text-[#ffffffcc] mb-2 flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
+              <li className=" text-[14px] text-[#ffffffcc] mb-2 flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
+              <li className=" text-[14px] text-[#ffffffcc] mb-2 flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
+              <li className=" text-[14px] text-[#ffffffcc] mb-2 flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
+              <li className=" text-[14px] text-[#ffffffcc] mb-2 flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
+            </ul>
+            <button className="w-full whiteBtn whiteBtnOutline mt-[50px]">
+              Commencer maintenant
+            </button>
+          </MagicCard>
+          <div></div>
+        </div>
       </div>
       <div className="mt-[200px]">
         <h2 className="mt-[24px] text-5xl text-center font-semibold">
-          <span className="text-[#747474] ">Il ny a pas</span> de question bete
+          <span className="text-[#747474]">Il ny a pas</span> de question bete
         </h2>
         <Faq />
+      </div>
+      <div className="relative mt-[160px] flex flex-col items-center justify-center">
+        <Meteors number={30} />
+        <GrayButton>Apprend a dominer le stress</GrayButton>
+        <h2 className="text-5xl mt-[20px]">On commence maintenant ?</h2>
+        <p className="mt-[24px] text-xl w-[600px] text-center">
+          Si tu prends mon programme maintenant tu commences qua payer le mois
+          suivant !
+        </p>
+        <button className="whiteBtn whiteBtnOutline mt-[50px]">
+          Commencer maintenant
+        </button>
+        <div className="z-10 h-[100px] text-black flex items-center justify-between w-[95%] mb-[35px] mt-[300px] m-auto bg-white rounded-2xl px-[32px]">
+          <div className="flex items-center justify-center gap-[10px] ">
+            <Image
+              className="rounded-full"
+              src="/pp.png"
+              width={43}
+              height={43}
+              alt="Jeremy Coron"
+            />
+            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight dark:from-white dark:to-slate-900/10 lg:text-lg">
+              Jeremy Coron 🧠
+            </span>
+          </div>
+          <a href="https://www.linkedin.com/in/jeremycoron/">
+            <Image
+              src="/icons/linkedin.svg"
+              width={24}
+              height={24}
+              alt={"Linkedin icon"}
+            />
+          </a>
+          <p>
+            Réalisé par:
+            <a target="_blank" href="https://la-landing.fr">
+              La-Landing
+            </a>
+          </p>
+        </div>
+        <img
+          src="/blur/blurFooter.svg"
+          alt="blur footer"
+          className="absolute bottom-0"
+        />
       </div>
     </div>
   );

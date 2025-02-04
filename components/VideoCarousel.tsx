@@ -1,38 +1,43 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default function VideoCarousel() {
   return (
-    <div className="mt-[50px] w-full">
-      <Swiper
-        slidesPerView="auto"
-        centeredSlides={true}
-        spaceBetween={30}
-        loop={true}
-        freeMode={true}
-        grabCursor={true}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-        }}
-        speed={10000}
-        modules={[Autoplay, FreeMode]}
-        className="swiper-stories"
-      >
-        {[...Array(10)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <video
-              src={`/video.mp4`}
-              muted
-              className="w-full h-full object-cover"
-            ></video>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="h-[40rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+      <InfiniteMovingCards
+        items={testimonials}
+        direction="left"
+        speed="normal"
+      />
     </div>
   );
 }
+
+const testimonials = [
+  {
+    videoLink: "/video.mp4",
+    name: "Thomas",
+    job: "SEO Local",
+  },
+  {
+    videoLink: "/video.mp4",
+    name: "Thomas2",
+    job: "SEO Local",
+  },
+  {
+    videoLink: "/video.mp4",
+    name: "Thomas3",
+    job: "SEO Local",
+  },
+  {
+    videoLink: "/video.mp4",
+    name: "Thomas4",
+    job: "SEO Local",
+  },
+  {
+    videoLink: "/video.mp4",
+    name: "Thomas5",
+    job: "SEO Local",
+  },
+];
