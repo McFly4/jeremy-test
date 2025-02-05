@@ -13,12 +13,15 @@ export const Meteors = ({ number = 20, ...props }: MeteorsProps) => {
   );
 
   useEffect(() => {
-    const styles = [...new Array(number)].map(() => ({
-      top: 100,
-      left: Math.floor(Math.random() * window.innerWidth) + "px",
-      animationDelay: Math.random() * 1 + 0.2 + "s",
-      animationDuration: Math.floor(Math.random() * 8 + 2) + "s",
-    }));
+    const styles = [...new Array(number)].map(() => {
+      const isLargeScreen = window.innerWidth > 1000;
+      return {
+        top: isLargeScreen ? 100 : 0,
+        left: Math.floor(Math.random() * window.innerWidth) + "px",
+        animationDelay: Math.random() * 1 + 0.2 + "s",
+        animationDuration: Math.floor(Math.random() * 8 + 2) + "s",
+      };
+    });
     setMeteorStyles(styles);
   }, [number]);
 
@@ -35,7 +38,7 @@ export const Meteors = ({ number = 20, ...props }: MeteorsProps) => {
           {...props}
         >
           {/* Meteor Tail */}
-          <div className="pointer-events-none absolute top-1/2 -z-10 h-px w-[200px] -translate-y-1/2 bg-gradient-to-r from-slate-500 to-transparent" />
+          <div className="pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] lg:w-[200px] -translate-y-1/2 bg-gradient-to-r from-slate-500 to-transparent" />
         </span>
       ))}
     </>

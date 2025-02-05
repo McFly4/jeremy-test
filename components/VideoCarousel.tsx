@@ -4,7 +4,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default function VideoCarousel() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+    <div className="h-[34rem] lg:h-[40rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
         direction="left"

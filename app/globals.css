@@ -8,7 +8,6 @@ body {
   color: #fff;
   background-image: url(/bg.svg);
   background-size: cover;
-
 }
 
 @layer base {
@@ -129,5 +128,29 @@ nav{
   z-index: 4;
   background: #2a2b2c ;
   opacity: 0.8;
+}
 
+@media screen and (max-width: 1024px){
+  .home1{
+    padding: 14px;
+    margin-top: 80px;
+  }
+  body {
+    background-image: none;
+  }
+
+  .whiteBtn{
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  nav{
+    width: 98%;
+    top: 5px;
+  }
+
+  .brands img{
+    height: revert-layer !important;
+  }
 }

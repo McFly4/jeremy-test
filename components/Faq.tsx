@@ -10,7 +10,7 @@ export function Faq() {
     <Accordion
       type="single"
       collapsible
-      className="w-3/4 m-auto text-[#D6D6D6] mt-[35px]"
+      className="lg:w-3/4 m-auto text-[#D6D6D6] mt-[35px]"
     >
       <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
