@@ -232,7 +232,7 @@ export default async function Home() {
             </p>
           </MagicCard>
         </div>
-        <button className="w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
+        <button className="font-[500] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
           Je passe à l&apos;action
         </button>
       </div>
@@ -331,7 +331,7 @@ export default async function Home() {
             </p>
           </div>
         </div>
-        <button className="w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
+        <button className="font-[500] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
           Deviens plus productif maintenant
         </button>
       </div>
