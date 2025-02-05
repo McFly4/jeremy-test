@@ -17,7 +17,7 @@ import { SanityDocument } from "next-sanity";
 
 export default async function Home() {
   const home = await sanityFetch<SanityDocument[]>({ query: firstQuery });
-  console.log(`posts`, home);
+  console.log(`home`, home);
   return (
     <div className="relative">
       <Grid />
@@ -26,7 +26,7 @@ export default async function Home() {
       <div className="home1 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[60px] px-4">
         <div className="z-10 lg:w-3/4">
           <GrayButton>Libère-toi du stress en seulement 30 jours.</GrayButton>
-          <h1 className="text-xl lg:text-[75px] mt-4 leading-tight">
+          <h1 className="text-xl lg:text-[64px] mt-4 leading-tight">
             Apprends à maîtriser <br /> ton stress pour reprendre <br /> le
             contrôle.
           </h1>
