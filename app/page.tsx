@@ -10,15 +10,15 @@ import { Faq } from "@/components/Faq";
 import { Meteors } from "@/components/ui/meteors";
 import { CircleCheck } from "lucide-react";
 import VideoTop from "@/components/VideoTop";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 export default function Home() {
   return (
     <div className="relative">
       <Grid />
       <Nav />
-
       {/* Section 1 */}
-      <div className="home1 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[60px] mt-12 lg:mt-20 px-4">
+      <div className="home1 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[60px] px-4">
         <div className="z-10 lg:w-3/4">
           <GrayButton>Libère-toi du stress en seulement 30 jours.</GrayButton>
           <h1 className="text-xl lg:text-[75px] mt-4 leading-tight">
@@ -77,7 +77,7 @@ export default function Home() {
         <div>
           <div className="relative">
             <img className="absolute -z-10" src="/blur/follow.svg" alt="blur" />
-            <div className="-left-1/3 top-[20px] rotate-6 rounded-2xl p-4 bg-white absolute hidden lg:flex flex-col gap-2 items-start">
+            <div className="z-10 -left-1/3 top-[20px] rotate-6 rounded-2xl p-4 bg-white absolute hidden lg:flex flex-col gap-2 items-start">
               <span className="bg-black text-white text-sm rounded-full p-1">
                 Accompagnement
               </span>
@@ -87,13 +87,20 @@ export default function Home() {
               />
               <p className="text-black text-sm">personnes accompagnées</p>
             </div>
-            <Image
-              className="rounded-lg object-cover"
-              src="/moi.png"
-              width={490}
-              height={630}
-              alt="Jeremy Coron"
-            />
+
+            <ShineBorder
+              className="relative flex  flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              color={["white"]}
+            >
+              <Image
+                className="rounded-lg object-cover"
+                src="/moi.png"
+                width={490}
+                height={630}
+                alt="Jeremy Coron"
+              />
+            </ShineBorder>
+
             <div className="hidden lg:block bg-white rounded-lg rotate-2 absolute -z-10 top-0 w-[490px] h-[630px]"></div>
             <div className="-right-[50px] bottom-[-30px] -rotate-6 rounded-2xl p-4 bg-white absolute hidden lg:flex flex-col gap-2 items-start">
               <span className="bg-black text-white text-sm rounded-full p-1">
