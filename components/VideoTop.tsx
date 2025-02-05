@@ -19,7 +19,7 @@ export default function VideoTop() {
   return (
     <div className="relative">
       <video
-        className="border-4 rounded-2xl shadow-2xl shadow-white"
+        className="border-4 rounded-2xl shadow-2xl shadow-white max-h-[550px] w-full object-cover"
         src="/video.mp4"
         muted
         onClick={(e) => handlePlayPause(e.currentTarget)}

@@ -16,8 +16,8 @@ import { firstQuery } from "@/sanity/lib/query";
 import { SanityDocument } from "next-sanity";
 
 export default async function Home() {
-  const posts = await sanityFetch<SanityDocument[]>({ query: firstQuery });
-  console.log(`posts`, posts);
+  const home = await sanityFetch<SanityDocument[]>({ query: firstQuery });
+  console.log(`posts`, home);
   return (
     <div className="relative">
       <Grid />
@@ -286,7 +286,7 @@ export default async function Home() {
           levier de productivité.
         </p>
         <div className="flex flex-wrap justify-center gap-6 mt-8 lg:mt-10 px-4">
-          <div className="max-w-[350px] p-4">
+          <div className="max-w-[300px] p-4">
             <img src="/icons/bulb.svg" alt="bulb" />
             <p className="text-black mt-4 text-xl">
               Reprogrammez votre réponse cognitive au stress
@@ -297,7 +297,7 @@ export default async function Home() {
               ruine votre productivité.
             </p>
           </div>
-          <div className="max-w-[350px] p-4">
+          <div className="max-w-[300px] p-4">
             <img src="/icons/bulb.svg" alt="bulb" />
             <p className="text-black mt-4 text-xl">
               Reprogrammez votre réponse cognitive au stress
@@ -308,7 +308,7 @@ export default async function Home() {
               ruine votre productivité.
             </p>
           </div>
-          <div className="max-w-[350px] p-4">
+          <div className="max-w-[300px] p-4">
             <img src="/icons/bulb.svg" alt="bulb" />
             <p className="text-black mt-4 text-xl">
               Reprogrammez votre réponse cognitive au stress
@@ -319,7 +319,7 @@ export default async function Home() {
               ruine votre productivité.
             </p>
           </div>
-          <div className="max-w-[350px] p-4">
+          <div className="max-w-[300px] p-4">
             <img src="/icons/bulb.svg" alt="bulb" />
             <p className="text-black mt-4 text-xl">
               Reprogrammez votre réponse cognitive au stress
