@@ -11,8 +11,13 @@ import { Meteors } from "@/components/ui/meteors";
 import { CircleCheck } from "lucide-react";
 import VideoTop from "@/components/VideoTop";
 import { ShineBorder } from "@/components/ui/shine-border";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { firstQuery } from "@/sanity/lib/query";
+import { SanityDocument } from "next-sanity";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await sanityFetch<SanityDocument[]>({ query: firstQuery });
+  console.log(`posts`, posts);
   return (
     <div className="relative">
       <Grid />
