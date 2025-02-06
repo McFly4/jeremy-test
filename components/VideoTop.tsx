@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-export default function VideoTop() {
+export default function VideoTop({ videoUrl }: { videoUrl: any }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayPause = (video: HTMLVideoElement) => {
@@ -20,7 +20,7 @@ export default function VideoTop() {
     <div className="relative">
       <video
         className="border-4 rounded-2xl shadow-2xl shadow-white max-h-[550px] w-full object-cover"
-        src="/video.mp4"
+        src={videoUrl.asset.url}
         muted
         onClick={(e) => handlePlayPause(e.currentTarget)}
       ></video>

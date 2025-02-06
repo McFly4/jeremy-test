@@ -5,32 +5,26 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export function Faq() {
+interface FaqProps {
+  questions: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+export function Faq({ questions }: FaqProps) {
   return (
     <Accordion
       type="single"
       collapsible
       className="lg:w-3/4 m-auto text-[#D6D6D6] mt-[35px]"
     >
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. Its animated by default, but you can disable it if you prefer.
-        </AccordionContent>
-      </AccordionItem>
+      {questions.map((q, index) => (
+        <AccordionItem value={`item-${index + 1}`} key={index}>
+          <AccordionTrigger>{q.question}</AccordionTrigger>
+          <AccordionContent>{q.answer}</AccordionContent>
+        </AccordionItem>
+      ))}
     </Accordion>
   );
 }
