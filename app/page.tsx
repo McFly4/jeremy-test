@@ -94,7 +94,7 @@ export default async function Home() {
             </div>
 
             <ShineBorder
-              className="relative flex  flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              className="relative flex  flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl"
               color={["white"]}
             >
               <Image
@@ -231,13 +231,13 @@ export default async function Home() {
             </p>
           </MagicCard>
         </div>
-        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
+        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-20">
           Je passe à l&apos;action
         </button>
       </div>
 
       {/* Section Plan d'action */}
-      <div className="z-10 mt-12 lg:mt-[50px] flex flex-col justify-center items-center">
+      <div className="z-10 mt-12 lg:mt-24 flex flex-col justify-center items-center">
         <GrayButton>J&apos;ai ce qu&apos;il te faut</GrayButton>
         <h2 className="mt-4 lg:mt-[24px] text-xl lg:text-5xl text-center font-semibold">
           <span className="text-[#747474]">Découvrez</span> votre plan
@@ -330,13 +330,13 @@ export default async function Home() {
             </p>
           </div>
         </div>
-        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
+        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-20">
           Deviens plus productif maintenant
         </button>
       </div>
 
       {/* Section Témoignages */}
-      <div className="mt-12 lg:mt-16 flex flex-col justify-center items-center px-4">
+      <div className="mt-12 lg:mt-24 flex flex-col justify-center items-center px-4">
         <GrayButton>Approuvé par +5000 personnes accompagnées</GrayButton>
         <h2 className="mt-4 lg:mt-6 text-xl lg:text-5xl text-center font-semibold">
           <span className="text-[#747474]">Découvrez</span> ce qu&apos;ils
@@ -432,7 +432,7 @@ export default async function Home() {
       </div>
 
       {/* Section CTA Footer */}
-      <div className="relative mt-12 lg:mt-16 flex flex-col items-center justify-center px-4">
+      <div className="relative mt-12 lg:mt-[130px] lg:mt-16 flex flex-col items-center justify-center px-4">
         <Meteors number={30} />
         <GrayButton>Apprends à dominer le stress</GrayButton>
         <h2 className="text-xl lg:text-5xl mt-4 lg:mt-6 text-center">
@@ -445,7 +445,7 @@ export default async function Home() {
         <button className="whiteBtn whiteBtnOutline mt-4 lg:mt-8">
           Commencer maintenant
         </button>
-        <div className="hidden z-10 h-24 mb-8 lg:mb-[35px] text-black lg:flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl mt-12 lg:mt-20 bg-white rounded-2xl px-6 lg:px-8 py-3 lg:py-4">
+        <div className="hidden z-10 h-24 mb-8 lg:mb-[35px] text-black lg:flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl mt-12 lg:mt-80 bg-white rounded-2xl px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-center gap-2">
             <Image
               className="rounded-full"

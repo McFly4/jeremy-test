@@ -26,8 +26,8 @@ interface ShineBorderProps {
 export function ShineBorder({
   borderRadius = 8,
   borderWidth = 1,
-  duration = 14,
-  color = "#000000",
+  duration = 8,
+  color = "#ffffff",
   className,
   children,
 }: ShineBorderProps) {
@@ -38,9 +38,7 @@ export function ShineBorder({
           "--border-radius": `${borderRadius}px`,
         } as React.CSSProperties
       }
-      className={cn(
-        className,
-      )}
+      className={cn(className)}
     >
       <div
         style={
