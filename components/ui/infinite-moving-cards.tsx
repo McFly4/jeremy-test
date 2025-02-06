@@ -12,7 +12,7 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    videoLink: string;
+    video: any;
     name: string;
     job: string;
   }[];
@@ -79,13 +79,13 @@ export const InfiniteMovingCards = ({
   };
 
   const handlePlayPause = (video: HTMLVideoElement, key: string) => {
+    setPlayingStates((prev) => ({ ...prev, [key]: !prev[key] }));
+
     if (video.paused) {
       video.muted = false;
       video.play();
-      setPlayingStates((prev) => ({ ...prev, [key]: true }));
     } else {
       video.pause();
-      setPlayingStates((prev) => ({ ...prev, [key]: false }));
     }
   };
 
@@ -105,21 +105,21 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item) => (
+        {items.map((item, index) => (
           <li
             className="shadow-[#ffffff50] shadow w-[280px] overflow-hidden relative rounded-2xl"
-            key={item.name}
+            key={index}
           >
             <video
               className="w-full h-full rounded-2xl"
-              src={item.videoLink}
+              src={item.video.asset.url}
               muted
               loop
               onClick={(e) => handlePlayPause(e.currentTarget, item.name)}
             ></video>
             {!playingStates[item.name] && (
               <button
-                className="absolute inset-0 flex items-center justify-center bg-black/30transition duration-300"
+                className="absolute inset-0 flex items-center justify-center bg-black/30 transition duration-300"
                 onClick={(e) =>
                   handlePlayPause(
                     e.currentTarget.previousSibling as HTMLVideoElement,
@@ -135,6 +135,7 @@ export const InfiniteMovingCards = ({
                 />
               </button>
             )}
+
             <div className="flex flex-col gap-2 text-white absolute bottom-6 left-1/2 transform -translate-x-1/2">
               <p className="text-center text-2xl">{item.name}</p>
               <p className="text-center text-[18px]">{item.job}</p>

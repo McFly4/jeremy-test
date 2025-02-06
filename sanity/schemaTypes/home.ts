@@ -609,5 +609,131 @@ export const home = defineType({
         },
       ],
     }),
+
+    // Add this inside the fields array after resultsSection2
+    defineField({
+      name: "actionPlanSection",
+      title: "Action Plan Section",
+      type: "object",
+      fields: [
+        {
+          name: "topButton",
+          title: "Top Button Text",
+          type: "string"
+        },
+        {
+          name: "title1",
+          title: "Title Part 1",
+          type: "string"
+        },
+        {
+          name: "title2",
+          title: "Title Part 2",
+          type: "string"
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "text"
+        },
+        {
+          name: "steps",
+          title: "Action Steps",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "image",
+                  title: "Step Image",
+                  type: "image",
+                  options: {
+                    hotspot: true
+                  }
+                },
+                {
+                  name: "number",
+                  title: "Step Number",
+                  type: "number"
+                },
+                {
+                  name: "title",
+                  title: "Step Title",
+                  type: "string"
+                },
+                {
+                  name: "bulletPoints",
+                  title: "Bullet Points",
+                  type: "array",
+                  of: [{ type: "string" }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "ctaButton",
+          title: "CTA Button Text",
+          type: "string"
+        }
+      ]
+    }),
+
+    // Add this inside the fields array
+    defineField({
+      name: "testimonialsSection",
+      title: "Testimonials Section",
+      type: "object",
+      fields: [
+        {
+          name: "topButton",
+          title: "Top Button Text",
+          type: "string"
+        },
+        {
+          name: "title1",
+          title: "Title Part 1",
+          type: "string"
+        },
+        {
+          name: "title2",
+          title: "Title Part 2",
+          type: "string"
+        },
+        {
+          name: "videos",
+          title: "Testimonial Videos",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "video",
+                  title: "Video",
+                  type: "file"
+                },
+                {
+                  name: "name",
+                  title: "Person Name",
+                  type: "string"
+                },
+                {
+                  name: "job",
+                  title: "Job Title",
+                  type: "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "ctaButton",
+          title: "CTA Button Text",
+          type: "string"
+        }
+      ]
+    }),
   ],
 });

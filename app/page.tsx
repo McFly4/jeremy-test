@@ -31,6 +31,8 @@ export default async function Home() {
   const faq = data.faqSection;
   const footer = data.ctaFooter;
   const nav = data.navigation;
+  const actionPlan = data.actionPlanSection;
+  const testimonials = data.testimonialsSection;
 
   return (
     <div className="relative">
@@ -58,15 +60,18 @@ export default async function Home() {
 
       {/* Marques */}
       <div className="brands px-2 relative z-10 bg-white w-full mt-8 lg:mt-10 h-[90px] flex items-center gap-4 lg:gap-[50px] lg:justify-center overflow-x-auto whitespace-nowrap scrollbar-hide">
-        {brands.map((brand: any, index: any) => (
-          <Image
-            key={index}
-            src={brand.image}
-            height={34}
-            width={150}
-            alt="brand"
-          />
-        ))}
+        {brands.map(
+          (brand: any, index: any) =>
+            brand.image && (
+              <Image
+                key={index}
+                src={brand.image}
+                height={34}
+                width={150}
+                alt="brand"
+              />
+            ),
+        )}
       </div>
 
       {/* Section Présentation */}
@@ -201,38 +206,47 @@ export default async function Home() {
 
       {/* Section Plan d'action */}
       <div className="z-10 mt-12 lg:mt-24 flex flex-col justify-center items-center">
-        <GrayButton>J&apos;ai ce qu&apos;il te faut</GrayButton>
+        <GrayButton>{actionPlan.topButton}</GrayButton>
         <h2 className="mt-4 lg:mt-[24px] text-xl lg:text-5xl text-center font-semibold">
-          <span className="text-[#747474]">Découvrez</span> votre plan
-          d&apos;action
+          <span className="text-[#747474]">{actionPlan.title1}</span>{" "}
+          {actionPlan.title2}
         </h2>
         <p className="mt-4 lg:mt-[20px] text-[#c5c5c5] text-sm lg:text-2xl text-center lg:w-[80%] m-auto">
-          Dominez le Stress est un programme qui vous guidera étape par étape
-          pour transformer le stress en une force positive, éliminer la
-          surcharge mentale et retrouver un équilibre qui soutient votre
-          productivité et votre bien-être.
+          {actionPlan.description}
         </p>
         <div className="flex flex-col justify-center items-center gap-12 lg:gap-[100px] mt-12 lg:mt-[80px]">
-          <div className="flex flex-col lg:flex-row justify-center items-center">
-            <Image
-              className="object-cover"
-              src="/stress.png"
-              width={430}
-              alt="stress"
-              height={270}
-            />
-            <div className="hidden lg:flex mx-8 div-dashed h-full">
-              <div className="div-dashed-number">1</div>
+          {actionPlan.steps.map((step, index) => (
+            <div
+              key={index}
+              className="flex flex-col lg:flex-row justify-center items-center"
+            >
+              {step.image && (
+                <Image
+                  className="object-cover"
+                  src={step.image}
+                  width={430}
+                  alt={step.title}
+                  height={270}
+                />
+              )}
+              <div className="hidden lg:flex mx-8 div-dashed h-full">
+                <div className="div-dashed-number">{step.number}</div>
+              </div>
+              <div className="flex flex-col">
+                <p className="text-xl mb-4">{step.title}</p>
+                {step.bulletPoints.map((point, idx) => (
+                  <p
+                    key={idx}
+                    className="text-sm lg:text-base text-[#ffffffcc]"
+                  >
+                    - {point}
+                  </p>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col">
-              <p className="text-xl mb-4">Calmez le stress rapidement</p>
-              <p className="text-sm lg:text-base text-[#ffffffcc]">
-                - Lorem ipsum dolor sit amet, consetcit ut ad.
-              </p>
-            </div>
-          </div>
+          ))}
           <button className="whiteBtn w-2/3 lg:w-1/2">
-            Débloque ton potentiel
+            {actionPlan.ctaButton}
           </button>
         </div>
       </div>
@@ -251,7 +265,7 @@ export default async function Home() {
         <div className="flex flex-wrap justify-center gap-6 mt-8 lg:mt-10 px-4">
           {results2.cards.map((card, index) => (
             <div key={index} className="max-w-[300px] p-4">
-              <Image src={card.icon} width={24} height={24} alt="icon" />
+              <Image src={card.icon} width={56} height={56} alt="icon" />
               <p className="text-black mt-4 text-xl">{card.title}</p>
               <p className="mt-3 text-xs lg:text-sm text-[#000000CC]">
                 {card.description}
@@ -266,16 +280,16 @@ export default async function Home() {
 
       {/* Section Témoignages */}
       <div className="mt-12 lg:mt-24 flex flex-col justify-center items-center px-4">
-        <GrayButton>Approuvé par +5000 personnes accompagnées</GrayButton>
+        <GrayButton>{testimonials.topButton}</GrayButton>
         <h2 className="mt-4 lg:mt-6 text-xl lg:text-5xl text-center font-semibold">
-          <span className="text-[#747474]">Découvrez</span> ce qu&apos;ils
-          disent ?
+          <span className="text-[#747474]">{testimonials.title1}</span>{" "}
+          {testimonials.title2}
         </h2>
         <div className="mt-4 lg:mt-8 w-full">
-          <VideoCarousel />
+          <VideoCarousel videos={testimonials.videos} />
         </div>
         <button className="whiteBtn mt-4 lg:mt-6">
-          Rejoins-les dès maintenant !
+          {testimonials.ctaButton}
         </button>
       </div>
 
@@ -351,18 +365,20 @@ export default async function Home() {
           {footer.ctaButton}
         </button>
         <div className="hidden z-10 h-24 mb-8 lg:mb-[35px] text-black lg:flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl mt-12 lg:mt-80 bg-white rounded-2xl px-6 lg:px-8 py-3 lg:py-4">
-          <div className="flex items-center gap-2">
-            <Image
-              className="rounded-full"
-              src={footer.footer.profileImage}
-              width={43}
-              height={43}
-              alt={footer.footer.name}
-            />
-            <span className="text-xs lg:text-sm font-medium">
-              {footer.footer.name}
-            </span>
-          </div>
+          {footer.footer.profileImage && (
+            <div className="flex items-center gap-2">
+              <Image
+                className="rounded-full"
+                src={footer.footer.profileImage}
+                width={43}
+                height={43}
+                alt={footer.footer.name}
+              />
+              <span className="text-xs lg:text-sm font-medium">
+                {footer.footer.name}
+              </span>
+            </div>
+          )}
           <a href={footer.footer.linkedinUrl}>
             <Image
               src="/icons/linkedin.svg"
@@ -383,28 +399,30 @@ export default async function Home() {
           </p>
         </div>
         <div className="flex z-10 mb-8 lg:mb-0 text-black lg:hidden flex-col sm:flex-row justify-between w-full mt-12 lg:mt-20 bg-white rounded-2xl p-6 h-[120px]">
-          <div className="flex items-center gap-2 justify-between w-full">
-            <div className="flex items-center gap-2">
-              <Image
-                className="rounded-full"
-                src={footer.footer.profileImage}
-                width={43}
-                height={43}
-                alt={footer.footer.name}
-              />
-              <span className="text-xs lg:text-sm font-medium">
-                {footer.footer.name}
-              </span>
+          {footer.footer.profileImage && (
+            <div className="flex items-center gap-2 justify-between w-full">
+              <div className="flex items-center gap-2">
+                <Image
+                  className="rounded-full"
+                  src={footer.footer.profileImage}
+                  width={43}
+                  height={43}
+                  alt={footer.footer.name}
+                />
+                <span className="text-xs lg:text-sm font-medium">
+                  {footer.footer.name}
+                </span>
+              </div>
+              <a href={footer.footer.linkedinUrl}>
+                <Image
+                  src="/icons/linkedin.svg"
+                  width={24}
+                  height={24}
+                  alt="Linkedin icon"
+                />
+              </a>
             </div>
-            <a href={footer.footer.linkedinUrl}>
-              <Image
-                src="/icons/linkedin.svg"
-                width={24}
-                height={24}
-                alt="Linkedin icon"
-              />
-            </a>
-          </div>
+          )}
           <p className="text-xs">
             {footer.footer.credits}{" "}
             <a

@@ -27,13 +27,15 @@ export default function Nav({ navigation }: NavProps) {
   return (
     <nav className="z-50 fixed flex justify-between items-center h-[58px]">
       <div className="lg:bg-[#202020] px-4 py-1 lg:shadow-2xl flex items-center justify-center gap-[10px] lg:border border-[#FDFDFD59] rounded-2xl">
-        <Image
-          className="rounded-full"
-          src={navigation.logo}
-          width={43}
-          height={43}
-          alt="Jeremy Coron"
-        />
+        {navigation.logo && (
+          <Image
+            className="rounded-full"
+            src={navigation.logo}
+            width={43}
+            height={43}
+            alt="Jeremy Coron"
+          />
+        )}
         <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
           {navigation.name}
         </span>

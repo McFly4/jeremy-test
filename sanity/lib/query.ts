@@ -108,5 +108,31 @@ export const firstQuery = groq`*[_type == "home"][0] {
       credits,
       creditsUrl
     }
+  },
+  actionPlanSection {
+    topButton,
+    title1,
+    title2,
+    description,
+    steps[] {
+      "image": image.asset->url,
+      number,
+      title,
+      bulletPoints
+    },
+    ctaButton
+  },
+  testimonialsSection {
+    topButton,
+    title1,
+    title2,
+    videos[] {
+      video{
+        asset->{_id, url}
+      },
+      name,
+      job
+    },
+    ctaButton
   }
 }`;

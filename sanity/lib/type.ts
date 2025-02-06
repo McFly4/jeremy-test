@@ -121,6 +121,41 @@ interface CtaFooter {
   footer: FooterInfo;
 }
 
+interface ActionStep {
+  image: string;
+  number: number;
+  title: string;
+  bulletPoints: string[];
+}
+
+interface ActionPlanSection {
+  topButton: string;
+  title1: string;
+  title2: string;
+  description: string;
+  steps: ActionStep[];
+  ctaButton: string;
+}
+
+interface TestimonialVideo {
+  video: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  name: string;
+  job: string;
+}
+
+interface TestimonialsSection {
+  topButton: string;
+  title1: string;
+  title2: string;
+  videos: TestimonialVideo[];
+  ctaButton: string;
+}
+
 export interface HomeDocument {
   navigation: Navigation;
   heroSection: HeroSection;
@@ -132,4 +167,6 @@ export interface HomeDocument {
   priceSection: PriceSection;
   faqSection: FaqSection;
   ctaFooter: CtaFooter;
+  actionPlanSection: ActionPlanSection;
+  testimonialsSection: TestimonialsSection;
 }
