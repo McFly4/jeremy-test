@@ -30,7 +30,7 @@ export default async function Home() {
             Apprends à maîtriser <br /> ton stress pour reprendre <br /> le
             contrôle.
           </h1>
-          <p className="text-[10px] lg:text-2xl text-[#A9A9A9] mt-4 lg:w-[850px]">
+          <p className="text-[10px] lg:text-xl text-[#A9A9A9] mt-4 lg:w-[850px]">
             Une approche humaine, personnalisée, et validée par des résultats
             concrets : rejoins-nous et découvre comment il est possible de
             transformer ton stress en sérénité.
@@ -122,7 +122,7 @@ export default async function Home() {
       </div>
 
       {/* Section Pour qui */}
-      <div className="z-10 mt-12 lg:mt-20 flex flex-col justify-center items-center px-4">
+      <div className="z-10 mt-12 lg:mt-40 flex flex-col justify-center items-center px-4">
         <GrayButton>Pour qui est ce programme</GrayButton>
         <h2 className="mt-6 text-xl lg:text-5xl text-center font-semibold">
           <span className="text-[#747474]">Tu es toujours</span> sous pression ?
@@ -131,13 +131,12 @@ export default async function Home() {
           Ce programme est conçu pour les personnes qui saturent de toujours
           être sous pression, de ne jamais réussir à calmer leur cerveau.
         </p>
-        <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-6 mt-8 lg:mt-10 px-4">
-          <div className="w-full lg:w-auto">
+        <div className="flex flex-col-reverse lg:flex-row items-center mt-8 lg:mt-10 px-4 w-[90%] justify-between">
+          <div className="w-full lg:w-[45%]">
             <Image
               src="/brain.png"
               alt="stress"
-              width={430}
-              height={270}
+              fill
               className="!static rounded-lg mt-8 lg:mt-0"
             />
           </div>
@@ -232,7 +231,7 @@ export default async function Home() {
             </p>
           </MagicCard>
         </div>
-        <button className="font-[500] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
+        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
           Je passe à l&apos;action
         </button>
       </div>
@@ -331,7 +330,7 @@ export default async function Home() {
             </p>
           </div>
         </div>
-        <button className="font-[500] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
+        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-16">
           Deviens plus productif maintenant
         </button>
       </div>
@@ -385,8 +384,16 @@ export default async function Home() {
             </p>
             <p className="text-4xl lg:text-5xl mt-4">450€</p>
             <div className="h-px w-1/2 bg-[#ffffff29] my-3 lg:my-4"></div>
-            <p className="mb-2 text-sm">Tes avantages :</p>
+            <p className="mb-4">Tes avantages :</p>
             <ul className="space-y-2">
+              <li className="text-[12px] lg:text-base text-[#ffffffcc] flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
+              <li className="text-[12px] lg:text-[14px] text-[#ffffffcc] flex items-center gap-2">
+                <CircleCheck width={16} height={16} />
+                Accès à vie
+              </li>
               <li className="text-[12px] lg:text-[14px] text-[#ffffffcc] flex items-center gap-2">
                 <CircleCheck width={16} height={16} />
                 Accès à vie
