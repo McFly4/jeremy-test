@@ -15,11 +15,9 @@ interface NavProps {
     logo: string;
     menuItems: {
       label: string;
-      link: string;
     }[];
     ctaButton: {
       text: string;
-      link: string;
     };
   };
 }
