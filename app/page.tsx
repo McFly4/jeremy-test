@@ -145,7 +145,7 @@ export default async function Home() {
         <p className="mt-4 lg:mt-5 text-[#c5c5c5] text-sm lg:text-2xl text-center w-full lg:w-[80%]">
           {forWho.description}
         </p>
-        <div className="flex flex-col-reverse lg:flex-row items-center mt-8 lg:mt-10 px-4 w-[90%] justify-between">
+        <div className="flex flex-col-reverse lg:flex-row items-center mt-8 lg:mt-10 lg:px-4 lg:w-[90%] justify-between">
           <div className="w-full lg:w-[45%]">
             <Image
               src={forWho.image}
@@ -265,9 +265,17 @@ export default async function Home() {
         <div className="flex flex-wrap justify-center gap-6 mt-8 lg:mt-10 px-4">
           {results2.cards.map((card, index) => (
             <div key={index} className="max-w-[300px] p-4">
-              <Image src={card.icon} width={56} height={56} alt="icon" />
-              <p className="text-black mt-4 text-xl">{card.title}</p>
-              <p className="mt-3 text-xs lg:text-sm text-[#000000CC]">
+              <Image
+                src={card.icon}
+                width={56}
+                height={56}
+                alt="icon"
+                className="m-auto lg:m-0"
+              />
+              <p className="text-center lg:text-left text-black mt-4 text-xl">
+                {card.title}
+              </p>
+              <p className="text-center lg:text-left mt-3 text-xs lg:text-sm text-[#000000CC]">
                 {card.description}
               </p>
             </div>
@@ -344,7 +352,7 @@ export default async function Home() {
       </div>
 
       {/* Section FAQ */}
-      <div className="mt-12 lg:mt-16 px-4">
+      <div className="mt-20 lg:mt-16 px-4">
         <h2 className="mt-4 lg:mt-6 text-xl lg:text-5xl text-center font-semibold">
           <span className="text-[#747474]">{faq.title1}</span> {faq.title2}
         </h2>
@@ -352,7 +360,7 @@ export default async function Home() {
       </div>
 
       {/* Section CTA Footer */}
-      <div className="relative mt-12 lg:mt-[130px] lg:mt-16 flex flex-col items-center justify-center px-4">
+      <div className="relative mt-24 lg:mt-[130px] flex flex-col items-center justify-center px-4">
         <Meteors number={30} />
         <GrayButton>{footer.topButton}</GrayButton>
         <h2 className="text-xl lg:text-5xl mt-4 lg:mt-6 text-center">
@@ -361,7 +369,7 @@ export default async function Home() {
         <p className="mt-4 lg:mt-6 text-xs lg:text-xl w-full max-w-lg text-center">
           {footer.description}
         </p>
-        <button className="whiteBtn whiteBtnOutline mt-4 lg:mt-8">
+        <button className="whiteBtn whiteBtnOutline mt-8">
           {footer.ctaButton}
         </button>
         <div className="hidden z-10 h-24 mb-8 lg:mb-[35px] text-black lg:flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl mt-12 lg:mt-80 bg-white rounded-2xl px-6 lg:px-8 py-3 lg:py-4">
@@ -398,7 +406,7 @@ export default async function Home() {
             </a>
           </p>
         </div>
-        <div className="flex z-10 mb-8 lg:mb-0 text-black lg:hidden flex-col sm:flex-row justify-between w-full mt-12 lg:mt-20 bg-white rounded-2xl p-6 h-[120px]">
+        <div className="flex z-10 mb-8 lg:mb-0 text-black lg:hidden flex-col sm:flex-row justify-between w-full mt-24 lg:mt-20 bg-white rounded-2xl p-6 h-[120px]">
           {footer.footer.profileImage && (
             <div className="flex items-center gap-2 justify-between w-full">
               <div className="flex items-center gap-2">
