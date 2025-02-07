@@ -33,6 +33,7 @@ export default async function Home() {
   const nav = data.navigation;
   const actionPlan = data.actionPlanSection;
   const testimonials = data.testimonialsSection;
+  const cta = data.ctaAllPagesButton;
 
   return (
     <div className="relative">
@@ -47,7 +48,9 @@ export default async function Home() {
           <p className="text-sm lg:text-xl text-[#A9A9A9] mt-4 lg:w-[700px]">
             {hero.description}
           </p>
-          <button className="whiteBtn mt-6">{hero.ctaButton}</button>
+          <a href={cta} target="_blank" rel="noopener noreferrer">
+            <button className="whiteBtn mt-6">{hero.ctaButton}</button>
+          </a>
           <div className="flex items-center gap-2 mt-4">
             <Image src="/people.png" width={122} height={25} alt="people" />
             <p className="text-xs lg:text-base">{hero.statsText}</p>
@@ -85,9 +88,11 @@ export default async function Home() {
           <p className="mt-4 lg:mt-[14px] lg:text-xl max-w-[550px] font-light">
             {presentation.description}
           </p>
-          <button className="whiteBtn mt-4 lg:mt-[16px]">
-            {presentation.ctaButton}
-          </button>
+          <a href={cta} target="_blank" rel="noopener noreferrer">
+            <button className="whiteBtn mt-4 lg:mt-[16px]">
+              {presentation.ctaButton}
+            </button>
+          </a>
         </div>
         <div>
           <div className="relative">
@@ -168,13 +173,15 @@ export default async function Home() {
                 </p>
               </MagicCard>
             ))}
-            <button className="whiteBtn w-full mt-4 lg:mt-6">
-              {forWho.ctaButton}
-            </button>
+            <a href={cta} target="_blank" rel="noopener noreferrer">
+              <button className="whiteBtn w-full mt-4 lg:mt-6">
+                {forWho.ctaButton}
+              </button>
+            </a>
           </div>
         </div>
       </div>
-
+      <div id="modules"></div>
       {/* Section Résultats */}
       <div className="bg-white text-[#020518] mt-12 lg:mt-16 flex flex-col items-center justify-center px-4">
         <BlackButton className="mt-12 lg:mt-20">
@@ -199,9 +206,11 @@ export default async function Home() {
             </MagicCard>
           ))}
         </div>
-        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-20">
-          {results.ctaButton}
-        </button>
+        <a href={cta} target="_blank" rel="noopener noreferrer">
+          <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-20">
+            {results.ctaButton}
+          </button>
+        </a>
       </div>
 
       {/* Section Plan d'action */}
@@ -218,7 +227,7 @@ export default async function Home() {
           {actionPlan.steps.map((step, index) => (
             <div
               key={index}
-              className="flex flex-col lg:flex-row justify-center items-center"
+              className={`flex flex-col justify-center items-center lg:flex-row ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
             >
               {step.image && (
                 <Image
@@ -229,10 +238,10 @@ export default async function Home() {
                   height={270}
                 />
               )}
-              <div className="hidden lg:flex mx-8 div-dashed h-full">
+              <div className="hidden lg:flex mx-24 div-dashed h-full">
                 <div className="div-dashed-number">{step.number}</div>
               </div>
-              <div className="flex flex-col">
+              <div className="lg:w-[430px] flex flex-col">
                 <p className="text-xl mb-4">{step.title}</p>
                 {step.bulletPoints.map((point, idx) => (
                   <p
@@ -245,9 +254,14 @@ export default async function Home() {
               </div>
             </div>
           ))}
-          <button className="whiteBtn w-2/3 lg:w-1/2">
-            {actionPlan.ctaButton}
-          </button>
+          <a
+            href={cta}
+            target="_blank"
+            className="w-2/3 lg:w-1/2"
+            rel="noopener noreferrer"
+          >
+            <button className="whiteBtn w-full">{actionPlan.ctaButton}</button>
+          </a>
         </div>
       </div>
 
@@ -281,11 +295,13 @@ export default async function Home() {
             </div>
           ))}
         </div>
-        <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-20">
-          {results2.ctaButton}
-        </button>
+        <a href={cta} target="_blank" rel="noopener noreferrer">
+          <button className="font-[600] w-[300px] lg:w-[400px] max-w-full py-3 lg:py-4 rounded-2xl outline outline-black bg-[#ECECEC] mt-12 lg:mt-20 mb-8 lg:mb-20">
+            {results2.ctaButton}
+          </button>
+        </a>
       </div>
-
+      <div id="results"></div>
       {/* Section Témoignages */}
       <div className="mt-12 lg:mt-24 flex flex-col justify-center items-center px-4">
         <GrayButton>{testimonials.topButton}</GrayButton>
@@ -296,11 +312,13 @@ export default async function Home() {
         <div className="mt-4 lg:mt-8 w-full">
           <VideoCarousel videos={testimonials.videos} />
         </div>
-        <button className="whiteBtn mt-4 lg:mt-6">
-          {testimonials.ctaButton}
-        </button>
+        <a href={cta} target="_blank" rel="noopener noreferrer">
+          <button className="whiteBtn mt-4 lg:mt-6">
+            {testimonials.ctaButton}
+          </button>
+        </a>
       </div>
-
+      <div id="price"></div>
       {/* Section Prix */}
       <div className="relative flex flex-col justify-center items-center mt-12 lg:mt-16 xl:mt-24 px-4">
         <GrayButton>{price.topButton}</GrayButton>
@@ -310,7 +328,24 @@ export default async function Home() {
         <p className="mt-2 lg:mt-4 lg:text-xl text-xs text-[#FFFFFFE0]">
           {price.subtitle}
         </p>
-        <div className="mt-6 lg:mt-10 flex flex-col lg:flex-row justify-center gap-6 lg:gap-8">
+        <div className="mt-6 lg:mt-10 flex flex-col lg:flex-row justify-center gap-6 lg:gap-36 w-full">
+          <div className="hidden xl:flex flex-col items-center justify-around w-[10%]">
+            {price.hero.slice(0, 3).map((hero, index) => (
+              <div
+                key={index}
+                className={`w-full flex flex-col ${index === 1 ? "items-start" : "items-end"} gap-2`}
+              >
+                <Image
+                  src={hero.image}
+                  alt="PP"
+                  width={70}
+                  height={70}
+                  className="border border-[#FFB951] rounded-full p-1"
+                />
+                <p className="text-xl mt-2 text-start">{hero.name}</p>
+              </div>
+            ))}
+          </div>
           <MagicCard className="relative max-w-[400px] flex flex-col rounded-2xl border border-[#717171] p-4 lg:p-8">
             <img
               src="/blur/blurPrice.svg"
@@ -344,10 +379,29 @@ export default async function Home() {
                 </li>
               ))}
             </ul>
-            <button className="w-full whiteBtn whiteBtnOutline mt-6 lg:mt-12 mb-4">
-              {price.card.ctaButton}
-            </button>
+            <a href={cta} target="_blank" rel="noopener noreferrer">
+              <button className="w-full whiteBtn whiteBtnOutline mt-6 lg:mt-12 mb-4">
+                {price.card.ctaButton}
+              </button>
+            </a>
           </MagicCard>
+          <div className="hidden xl:flex flex-col items-center justify-around w-[10%]">
+            {price.hero.slice(3, 6).map((hero, index) => (
+              <div
+                key={index}
+                className={`w-full flex flex-col ${index !== 1 ? "items-start" : "items-end"} gap-2`}
+              >
+                <Image
+                  src={hero.image}
+                  alt="PP"
+                  width={70}
+                  height={70}
+                  className="border border-[#FFB951] rounded-full p-1"
+                />
+                <p className="text-xl mt-2 text-start">{hero.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

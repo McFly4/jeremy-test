@@ -5,6 +5,12 @@ export const home = defineType({
   title: "Home",
   type: "document",
   fields: [
+    // cta all pages button
+    defineField({
+      name: "ctaAllPagesButton",
+      title: "CTA de tous les boutons",
+      type: "url",
+    }),
     //Nav
     defineField({
       name: "navigation",
@@ -443,6 +449,32 @@ export const home = defineType({
           initialValue: "⮕ Possibilité de paiement en 3x sans frais",
         },
         {
+          name: "hero",
+          title: "Hero",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  options: {
+                    hotspot: true,
+                  },
+                },
+                {
+                  name: "name",
+                  title: "Name",
+                  type: "string",
+                  initialValue: "Jeremy Coron 🧠",
+                },
+              ],
+            },
+          ],
+        },
+        {
           name: "card",
           title: "Price Card",
           type: "object",
@@ -619,22 +651,22 @@ export const home = defineType({
         {
           name: "topButton",
           title: "Top Button Text",
-          type: "string"
+          type: "string",
         },
         {
           name: "title1",
           title: "Title Part 1",
-          type: "string"
+          type: "string",
         },
         {
           name: "title2",
           title: "Title Part 2",
-          type: "string"
+          type: "string",
         },
         {
           name: "description",
           title: "Description",
-          type: "text"
+          type: "text",
         },
         {
           name: "steps",
@@ -649,35 +681,35 @@ export const home = defineType({
                   title: "Step Image",
                   type: "image",
                   options: {
-                    hotspot: true
-                  }
+                    hotspot: true,
+                  },
                 },
                 {
                   name: "number",
                   title: "Step Number",
-                  type: "number"
+                  type: "number",
                 },
                 {
                   name: "title",
                   title: "Step Title",
-                  type: "string"
+                  type: "string",
                 },
                 {
                   name: "bulletPoints",
                   title: "Bullet Points",
                   type: "array",
-                  of: [{ type: "string" }]
-                }
-              ]
-            }
-          ]
+                  of: [{ type: "string" }],
+                },
+              ],
+            },
+          ],
         },
         {
           name: "ctaButton",
           title: "CTA Button Text",
-          type: "string"
-        }
-      ]
+          type: "string",
+        },
+      ],
     }),
 
     // Add this inside the fields array
@@ -689,17 +721,17 @@ export const home = defineType({
         {
           name: "topButton",
           title: "Top Button Text",
-          type: "string"
+          type: "string",
         },
         {
           name: "title1",
           title: "Title Part 1",
-          type: "string"
+          type: "string",
         },
         {
           name: "title2",
           title: "Title Part 2",
-          type: "string"
+          type: "string",
         },
         {
           name: "videos",
@@ -712,28 +744,28 @@ export const home = defineType({
                 {
                   name: "video",
                   title: "Video",
-                  type: "file"
+                  type: "file",
                 },
                 {
                   name: "name",
                   title: "Person Name",
-                  type: "string"
+                  type: "string",
                 },
                 {
                   name: "job",
                   title: "Job Title",
-                  type: "string"
-                }
-              ]
-            }
-          ]
+                  type: "string",
+                },
+              ],
+            },
+          ],
         },
         {
           name: "ctaButton",
           title: "CTA Button Text",
-          type: "string"
-        }
-      ]
+          type: "string",
+        },
+      ],
     }),
   ],
 });

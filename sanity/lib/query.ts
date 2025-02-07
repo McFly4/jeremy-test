@@ -2,6 +2,7 @@ import { groq } from "next-sanity";
 
 // Query schema datasets
 export const firstQuery = groq`*[_type == "home"][0] {
+	ctaAllPagesButton,
   navigation {
     "logo": logo.asset->url,
     name,
@@ -79,6 +80,10 @@ export const firstQuery = groq`*[_type == "home"][0] {
     title1,
     title2,
     subtitle,
+    hero[] {
+      "image": image.asset->url,
+    	name,
+    },
     card {
       "image": image.asset->url,
       title,

@@ -13,6 +13,11 @@ interface Navigation {
   ctaButton: CtaButton;
 }
 
+interface heroIcons {
+  image: string;
+  name: string;
+}
+
 interface HeroSection {
   topButton: string;
   titlePart1: string;
@@ -92,6 +97,7 @@ interface PriceSection {
   title2: string;
   subtitle: string;
   card: PriceCard;
+  hero: heroIcons[];
 }
 
 interface FaqQuestion {
@@ -157,6 +163,7 @@ interface TestimonialsSection {
 }
 
 export interface HomeDocument {
+  ctaAllPagesButton: string;
   navigation: Navigation;
   heroSection: HeroSection;
   presentationSection: PresentationSection;

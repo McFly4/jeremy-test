@@ -23,7 +23,6 @@ interface NavProps {
 }
 
 export default function Nav({ navigation }: NavProps) {
-  console.log(`navigation`, navigation);
   return (
     <nav className="z-50 fixed flex justify-between items-center h-[58px]">
       <div className="lg:bg-[#202020] px-4 py-1 lg:shadow-2xl flex items-center justify-center gap-[10px] lg:border border-[#FDFDFD59] rounded-2xl">
@@ -47,9 +46,11 @@ export default function Nav({ navigation }: NavProps) {
         {navigation.menuItems.map((item, index) => (
           <Link
             key={index}
-            href="#1"
+            href={
+              index === 0 ? "#modules" : index === 1 ? "#results" : "#price"
+            }
             passHref
-            className="text-white dark:text-slate-900/10 text-sm font-medium leading-none tracking-tight"
+            className="z-50 text-white dark:text-slate-900/10 text-sm font-medium leading-none tracking-tight"
           >
             <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               {item.label}
